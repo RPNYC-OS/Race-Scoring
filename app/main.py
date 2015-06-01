@@ -1,11 +1,6 @@
-# Title: Race Score Module
-# Author: Campbell Fleury
-# Date: 2015-05-11
-
 from datetime import datetime
 from tinydb import TinyDB, where
 import csv
-
 
 db = TinyDB('app/db/data.json')
 
@@ -86,7 +81,6 @@ class race(object):
         rc = race.tbl.get(where('name') == name)
         return rc['start']
 
-
 class result(object):
 
     tbl = db.table('result')
@@ -115,7 +109,6 @@ class result(object):
     def getRaceResults(race):
         rslts = result.tbl.search(where('race').matches(race))
         return rslts
-
 
 class time(object):
 

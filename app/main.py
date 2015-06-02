@@ -54,6 +54,11 @@ class handicap(object):
                     'phrf': row['PHRF'],
                     'irc': row['IRC']
                 })
+    def getCorrection(name,scheme):
+        correction = handicap.tbl.get(where('name') == name)
+        correction = correction[scheme]
+        return correction
+
 
 class race(object):
 
